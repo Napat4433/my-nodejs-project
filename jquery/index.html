@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Basic</title>
+    <!-- jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // เปลี่ยนข้อความของ <p> เมื่อคลิกปุ่ม
+            $("#changeText").click(function() {
+                $("#text").text("เปลี่ยนโดย jQuery!");
+            });
+
+            // ซ่อนย่อหน้า
+            $("#hide").click(function() {
+                $("#text").hide();
+            });
+
+            // แสดงย่อหน้า
+            $("#show").click(function() {
+                $("#text").show();
+            });
+
+            // ขยับกล่องไปทางขวา
+            $("#moveBox").click(function() {
+                $("#box").animate({ left: '250px' }, 1000 );
+            });
+
+            // เปลี่ยนสีพื้นหลังของกล่อง
+            $("#changeColor").click(function() {
+                $("#box").css("background-color", "blue");
+            });
+
+            // สร้างการเคลื่อนไหวซับซ้อน
+            $("#animateBox").click(function() {
+                $("#box").animate({
+                    left: '250px',
+                    height: '150px',
+                    width: '150px',
+                    backgroundColor: 'green'
+                }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>ยินดีต้อนรับ</h1>
+    <p id="text">นี่คือย่อหน้าที่จะถูกแก้ไขโดย jQuery</p>
+    <button id="changeText">เปลี่ยนข้อความ</button>
+    <button id="hide">ซ่อน</button>
+    <button id="show">แสดง</button>
+    <div id="box" style="width:100px; height:100px; background-color:red;"></div>
+    <button id="moveBox">ขยับกล่อง</button>
+    <button id="changeColor">เปลี่ยนสี</button>
+    <button id="animateBox">สร้างการเคลื่อนไหวซับซ้อน</button>
+</body>
+</html>

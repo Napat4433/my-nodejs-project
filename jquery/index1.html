@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Basic</title>
+    <!-- jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#cal").click(function() {
+
+                var inputValue = $("#result").val();
+
+                try {
+
+                    var result = eval(inputValue);
+
+
+                    if (isFinite(result)) {
+
+                        $("#text").text("ผลลัพธ์: " + result);
+                    } else {
+
+                        $("#text").text("ข้อผิดพลาดในการคำนวณ");
+                    }
+                } catch (e) {
+
+                    $("#text").text("กรุณาใส่ตัวเลข");
+                }
+                $("#text"),text(3.14159*r*r);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>ยินดีแต่ไม่ต้อนรับ</h1>
+    <p id="text">ผลลัพธ์</p>
+    <input type="text" id = "result">
+    <button id="cal">click เพื่อ หาคำตอบ</button>
+</html>
